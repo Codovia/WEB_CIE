@@ -1,0 +1,72 @@
+/* style2.css */
+body {
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  color: #4b0082;
+}
+
+#container {
+  border: 5px dotted #ff69b4;
+  padding: 30px;
+  background-color: #fff0f5;
+}
+
+h2 {
+  color: #ff4500;
+  text-shadow: 2px 2px #ffd700;
+}
+
+h3 {
+  font-size: 1.5em;
+  color: #8a2be2;
+}
+
+p:first-line {
+  color: #ff1493;
+  font-size: 1.2em;
+}
+
+.highlight {
+  background-color: #ffe4e1;
+  border: 2px dashed #ff69b4;
+  padding: 15px;
+}
+
+.buttons a {
+  text-decoration: none;
+  padding: 12px 24px;
+  background-color: #ff69b4;
+  color: white;
+  border-radius: 25px;
+  font-family: 'Comic Sans MS', cursive;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.buttons a:hover {
+  background-color: #ff1493;
+  transform: scale(1.1);
+}
+
+
+p ~ p {
+  font-family: 'Courier New', monospace;
+  font-style: oblique;
+}
+
+span {
+  background-color: #e0ffff;
+  padding: 5px;
+  display: inline-block;
+}
+
+img, time {
+  display: block;
+  border: 3px solid #ff4500;
+  margin: 15px 0;
+}
+
+a[target="_blank"]:hover {
+  background-color: #ff0;
+  color: #000;
+}
