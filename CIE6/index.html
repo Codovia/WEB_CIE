@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+      #container {
+        text-align: center;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        background-color: #27ff20;
+      }
+      input {
+        margin: 10px;
+        padding: 10px;
+        width: 200px;
+      }
+      button {
+        margin: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        width: 120px;
+        background-color: #6ff56a;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Simple Calculator</h1>
+      <input type="number" id="num1" max="25" placeholder="First number" />
+      <input type="number" id="num2" placeholder="Second number" />
+      <div>
+        <button onclick="calculate('sum')">Sum</button>
+        <button onclick="calculate('product')">Product</button>
+        <button onclick="calculate('difference')">Difference</button>
+        <button onclick="calculate('remainder')">Remainder</button>
+        <button onclick="calculate('power')">Power</button>
+        <button onclick="calculate('sqrt')">Square Root</button>
+        <button onclick="calculate('square')">Square</button>
+      </div>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function calculate(operation) {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        let result;
+
+        if (isNaN(num1) && operation !== "sqrt" && operation !== "square") {
+          document.getElementById("result").innerText =
+            "Please enter valid numbers";
+          return;
+        }
+
+        switch (operation) {
+          case "sum":
+            result = num1 + num2;
+            break;
+          case "product":
+            result = num1 * num2;
+            break;
+          case "difference":
+            result = num1 - num2;
+            break;
+          case "remainder":
+            if (num2 === 0) {
+              result = "Cannot divide by zero";
+            } else {
+              result = num1 % num2;
+            }
+            break;
+          case "power":
+            result = Math.pow(num1, num2);
+            break;
+          case "sqrt":
+            if (num1 < 0) {
+              result = "Cannot take square root of negative number";
+            } else {
+              result = Math.sqrt(num1);
+            }
+            break;
+          case "square":
+            result = num1 * num1;
+            break;
+        }
+
+        document.getElementById("result").innerText = "Result: " + result;
+      }
+    </script>
+  </body>
+</html>
